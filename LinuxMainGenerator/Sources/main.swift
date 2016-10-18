@@ -1,8 +1,6 @@
-//: Playground - noun: a place where people can play
-import PlaygroundSupport
-import Cocoa
+import Foundation
 
-playgroundSharedDataDirectory
+
 
 func parsingClass(file path: String) -> (String ,[String])? {
 
@@ -57,7 +55,6 @@ func createTestsFileForLinux(usingFiles files: [String], testsBundle: String) ->
             output += "        testCase(\(tuple.0).allTests),\n"
         }
     }
-
     output += "        ])\n"
 
 
@@ -77,16 +74,18 @@ func write(this text: String,inside file: String) {
 
 }
 
-guard let folder = Bundle.main.path(forResource: "Tests", ofType: nil) else {
-    exit(0)
+
+if CommandLine.arguments.count == 2 {
+    print("Invalid usage. Missing the path of tests.")
+    exit(1)
 }
-let url = URL(fileURLWithPath: folder, isDirectory: true)
-let mainFolder = url.deletingLastPathComponent()
-let fileManager = FileManager.default
+
+let path = CommandLine.arguments[1]
+let framework = CommandLine.arguments[2]
+
+let fm = FileManager.default
 var files = [String]()
-fileManager.enumerator(atPath: folder)?.forEach{files.append("\(folder)/\($0)")}
-let output = createTestsFileForLinux(usingFiles: files, testsBundle: "MyFrameworkTests")
-
-let fileToCreate = "\(mainFolder.path)/Out/LinuxMain.swift"
-
+fm.enumerator(atPath: "Tests/\(path)/")?.forEach{files.append("Tests/\(path)/\($0)")}
+let output = createTestsFileForLinux(usingFiles: files, testsBundle: framework)
+let fileToCreate = "Tests/LinuxMain.swift"
 write(this: output, inside:fileToCreate)

@@ -1,0 +1,230 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 46;
+    rootObject = __RootObject_;
+    objects = {
+        __RootObject_ = {
+            isa = PBXProject;
+            attributes = {LastUpgradeCheck = 9999;};
+            buildConfigurationList = ___RootConfs_;
+            compatibilityVersion = 'Xcode 3.2';
+            developmentRegion = English;
+            hasScannedForEncodings = 0;
+            knownRegions = (en);
+            mainGroup = ___RootGroup_;
+            productRefGroup = ____Products_;
+            projectDirPath = '';
+            projectRoot = '';
+            targets = (______Target_LinuxMainGenerator, ______Target_LinuxMainGeneratorTests);
+        };
+        '__PBXFileRef_Package.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Package.swift';
+            sourceTree = '<group>';
+        };
+        ___RootGroup_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_Package.swift', _____Configs_, _____Sources_,  Dependencies_, _______Tests_, ____Products_);
+            sourceTree = '<group>';
+        };
+        _______Group_LinuxMainGenerator = {
+            isa = PBXGroup;
+            name = 'LinuxMainGenerator';
+            path = 'Sources';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Sources/main.swift');
+        };
+        '__PBXFileRef_Sources/main.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'main.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_LinuxMainGenerator = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_LinuxMainGenerator;
+            buildPhases = (CompilePhase_LinuxMainGenerator, ___LinkPhase_LinuxMainGenerator);
+            buildRules = ();
+            dependencies = ();
+            name = 'LinuxMainGenerator';
+            productName = LinuxMainGenerator;
+            productReference = _____Product_LinuxMainGenerator;
+            productType = 'com.apple.product-type.tool';
+        };
+        _____Product_LinuxMainGenerator = {
+            isa = PBXFileReference;
+            explicitFileType = 'compiled.mach-o.executable';
+            path = 'LinuxMainGenerator';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_LinuxMainGenerator = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Sources/main.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Sources/main.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/main.swift';
+        };
+        ___LinkPhase_LinuxMainGenerator = {
+            isa = PBXFrameworksBuildPhase;
+            files = ();
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _______Confs_LinuxMainGenerator = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_LinuxMainGenerator, _ReleaseConf_LinuxMainGenerator);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_LinuxMainGenerator = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_SWIFT_FLAGS = '$(inherited)'; SWIFT_FORCE_STATIC_LINK_STDLIB = 'NO'; SWIFT_FORCE_DYNAMIC_LINK_STDLIB = 'YES'; SWIFT_OPTIMIZATION_LEVEL = '-Onone'; OTHER_LDFLAGS = '$(inherited)'; SWIFT_VERSION = '3.0'; };
+            name = Debug;
+        };
+        _ReleaseConf_LinuxMainGenerator = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_SWIFT_FLAGS = '$(inherited)'; SWIFT_FORCE_STATIC_LINK_STDLIB = 'NO'; SWIFT_FORCE_DYNAMIC_LINK_STDLIB = 'YES'; OTHER_LDFLAGS = '$(inherited)'; SWIFT_VERSION = '3.0'; };
+            name = Release;
+        };
+        __Dependency_LinuxMainGenerator = {
+            isa = PBXTargetDependency;
+            target = ______Target_LinuxMainGenerator;
+        };
+        _______Group_LinuxMainGeneratorTests = {
+            isa = PBXGroup;
+            name = 'LinuxMainGeneratorTests';
+            path = 'Tests/LinuxMainGeneratorTests';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Tests/LinuxMainGeneratorTests/ATests.swift', '__PBXFileRef_Tests/LinuxMainGeneratorTests/BTests.swift');
+        };
+        '__PBXFileRef_Tests/LinuxMainGeneratorTests/ATests.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'ATests.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Tests/LinuxMainGeneratorTests/BTests.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'BTests.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_LinuxMainGeneratorTests = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_LinuxMainGeneratorTests;
+            buildPhases = (CompilePhase_LinuxMainGeneratorTests, ___LinkPhase_LinuxMainGeneratorTests);
+            buildRules = ();
+            dependencies = (__Dependency_LinuxMainGenerator);
+            name = 'LinuxMainGeneratorTests';
+            productName = LinuxMainGeneratorTests;
+            productReference = _____Product_LinuxMainGeneratorTests;
+            productType = 'com.apple.product-type.bundle.unit-test';
+        };
+        _____Product_LinuxMainGeneratorTests = {
+            isa = PBXFileReference;
+            explicitFileType = 'compiled.mach-o.wrapper.cfbundle';
+            path = 'LinuxMainGeneratorTests.xctest';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_LinuxMainGeneratorTests = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Tests/LinuxMainGeneratorTests/ATests.swift', '__src_cc_ref_Tests/LinuxMainGeneratorTests/BTests.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Tests/LinuxMainGeneratorTests/ATests.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Tests/LinuxMainGeneratorTests/ATests.swift';
+        };
+        '__src_cc_ref_Tests/LinuxMainGeneratorTests/BTests.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Tests/LinuxMainGeneratorTests/BTests.swift';
+        };
+        ___LinkPhase_LinuxMainGeneratorTests = {
+            isa = PBXFrameworksBuildPhase;
+            files = (_LinkFileRef_LinuxMainGenerator_via_LinuxMainGeneratorTests);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _LinkFileRef_LinuxMainGenerator_via_LinuxMainGeneratorTests = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_LinuxMainGenerator;
+        };
+        _______Confs_LinuxMainGeneratorTests = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_LinuxMainGeneratorTests, _ReleaseConf_LinuxMainGeneratorTests);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_LinuxMainGeneratorTests = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '@loader_path/../Frameworks'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'LinuxMainGenerator.xcodeproj/LinuxMainGeneratorTests_Info.plist'; SWIFT_OPTIMIZATION_LEVEL = '-Onone'; EMBEDDED_CONTENT_CONTAINS_SWIFT = 'YES'; OTHER_LDFLAGS = '$(inherited)'; SWIFT_VERSION = '3.0'; };
+            name = Debug;
+        };
+        _ReleaseConf_LinuxMainGeneratorTests = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '@loader_path/../Frameworks'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'LinuxMainGenerator.xcodeproj/LinuxMainGeneratorTests_Info.plist'; EMBEDDED_CONTENT_CONTAINS_SWIFT = 'YES'; OTHER_LDFLAGS = '$(inherited)'; SWIFT_VERSION = '3.0'; };
+            name = Release;
+        };
+        __Dependency_LinuxMainGeneratorTests = {
+            isa = PBXTargetDependency;
+            target = ______Target_LinuxMainGeneratorTests;
+        };
+        '__PBXFileRef_LinuxMainGenerator.xcodeproj/Configs/Project.xcconfig' = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.xcconfig;
+            path = 'LinuxMainGenerator.xcodeproj/Configs/Project.xcconfig';
+            sourceTree = '<group>';
+        };
+        _____Configs_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_LinuxMainGenerator.xcodeproj/Configs/Project.xcconfig');
+            name = Configs;
+            sourceTree = '<group>';
+        };
+        _____Sources_ = {
+            isa = PBXGroup;
+            children = (_______Group_LinuxMainGenerator);
+            name = Sources;
+            sourceTree = '<group>';
+        };
+        _______Tests_ = {
+            isa = PBXGroup;
+            children = (_______Group_LinuxMainGeneratorTests);
+            name = Tests;
+            sourceTree = '<group>';
+        };
+       TestProducts_ = {
+            isa = PBXGroup;
+            children = (_____Product_LinuxMainGeneratorTests);
+            name = Tests;
+            sourceTree = '<group>';
+        };
+        ____Products_ = {
+            isa = PBXGroup;
+            children = (TestProducts_, _____Product_LinuxMainGenerator);
+            name = Products;
+            sourceTree = '<group>';
+        };
+        _______Debug_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_LinuxMainGenerator.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Debug;
+        };
+        _____Release_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_LinuxMainGenerator.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Release;
+        };
+        ___RootConfs_ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (_______Debug_, _____Release_);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+    };
+}
