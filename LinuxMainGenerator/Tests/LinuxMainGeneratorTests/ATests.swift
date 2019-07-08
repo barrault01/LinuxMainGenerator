@@ -6,7 +6,7 @@ class ATests: XCTestCase {
 
     func test001() {
 
-        XCTAssert(true)
+
 
     }
 

@@ -10,15 +10,17 @@ import XCTest
             ]
     }
 
-    extension BTests {
+    extension CTests {
         static let allTests = [
                 ("test001",test001),
+                ("test002",test002),
+                ("test003",test003),
             ]
     }
 
     XCTMain([
         testCase(ATests.allTests),
-        testCase(BTests.allTests),
+        testCase(CTests.allTests),
         ])
 
 #endif

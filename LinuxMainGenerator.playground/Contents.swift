@@ -6,9 +6,11 @@ playgroundSharedDataDirectory
 
 func parsingClass(file path: String) -> (String ,[String])? {
 
-    if ((path as NSString).pathExtension != "swift") {
+    guard let range = path.range(of:"Tests.swift") ,
+        range.isEmpty == false else {
         return nil
     }
+
     let text = try! String(contentsOfFile: path)
 
     let regexForTestCase = "func (test[\\w]+)[ ]*\\(\\)"
@@ -52,7 +54,7 @@ func createTestsFileForLinux(usingFiles files: [String], testsBundle: String) ->
 
     output += "    XCTMain([\n"
 
-    for file in files {
+    for file in files {2
         if let tuple = parsingClass(file: file) {
             output += "        testCase(\(tuple.0).allTests),\n"
         }

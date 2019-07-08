@@ -1,7 +1,5 @@
 import Foundation
 
-
-
 func parsingClass(file path: String) -> (String ,[String])? {
 
     if ((path as NSString).pathExtension != "swift") {
@@ -16,7 +14,6 @@ func parsingClass(file path: String) -> (String ,[String])? {
     let length = nsString.length
     let results = re.matches(in: text, options: [], range: NSRange(location: 0, length: length))
     let strings = results.map { nsString.substring(with: $0.rangeAt(1))}
-
 
     let regexForClassName = "class ([\\w]+)"
     let re2 = try! NSRegularExpression(pattern: regexForClassName)
@@ -64,14 +61,12 @@ func createTestsFileForLinux(usingFiles files: [String], testsBundle: String) ->
     
 }
 
-func write(this text: String,inside file: String) {
-
+func write(this text: String, inside file: String) {
     let url = URL(fileURLWithPath: file)
     do {
         try text.write(to: url, atomically: false, encoding: String.Encoding.utf8)
     }
     catch let error { print(error) }
-
 }
 
 
